@@ -16,10 +16,9 @@
             --shadow: 0 10px 30px rgba(0,0,0,0.08);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--light); color: var(--secondary); overflow-x: hidden; }
-
+        
         /* ZOOM OVERLAY */
         .zoom-overlay { 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
@@ -28,7 +27,7 @@
             backdrop-filter: blur(10px); cursor: pointer;
         }
         .zoom-overlay img, .zoom-overlay video { max-width: 90%; max-height: 85vh; border-radius: 12px; }
-
+        
         /* HEADER & NAV */
         header { background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow); padding: 10px 0; }
         .header-top { display: flex; justify-content: space-between; align-items: center; padding: 5px 5%; }
@@ -36,59 +35,45 @@
         
         .search-container { display: flex; align-items: center; background: #eee; border-radius: 25px; padding: 6px 15px; width: 180px; }
         .search-container input { border: none; background: transparent; outline: none; width: 100%; margin-left: 8px; font-size: 0.8rem; }
-
         .menu-mov { display: flex; gap: 15px; overflow-x: auto; padding: 10px 5%; border-top: 1px solid #f0f0f0; scrollbar-width: none; }
         .menu-mov a { color: var(--secondary); text-decoration: none; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; white-space: nowrap; }
-
-/* --- CONFIGURAÇÃO PADRÃO (CELULAR) --- */
-.banner { 
-    height: 200px; /* Altura menor para o celular não ficar gigante */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.imgur.com/Q8qggPX.png'); 
-    background-size: cover; 
-    background-position: center; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    color: white; 
-    text-align: center; 
-    padding: 0 5%; 
-    transition: all 0.3s ease;
-}
-
-.banner h1 { 
-    font-size: 1.2rem; 
-    margin-bottom: 8px; 
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.banner p { 
-    font-size: 0.85rem; 
-    opacity: 0.9; 
-    max-width: 280px; /* Evita que o texto espalhe muito no celular */
-}
-
-/* --- CONFIGURAÇÃO PARA PC (Telas maiores que 768px) --- */
-@media (min-width: 768px) {
-    .banner { 
-        height: 600px; /* Altura grande que você gosta para o Computador */
-    }
-    
-    .banner h1 { 
-        font-size: 2.5rem; /* Letra maior no PC */
-    }
-    
-    .banner p { 
-        font-size: 1.2rem; /* Texto maior no PC */
-        max-width: 600px;
-    }
-}
+        
+        /* BANNER */
+        .banner { 
+            height: 200px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://i.imgur.com/Q8qggPX.png'); 
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            color: white; 
+            text-align: center; 
+            padding: 0 5%; 
+            transition: all 0.3s ease;
+        }
+        .banner h1 { 
+            font-size: 1.2rem; 
+            margin-bottom: 8px; 
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .banner p { 
+            font-size: 0.85rem; 
+            opacity: 0.9; 
+            max-width: 280px;
+        }
+        @media (min-width: 768px) {
+            .banner { height: 600px; }
+            .banner h1 { font-size: 2.5rem; }
+            .banner p { font-size: 1.2rem; max-width: 600px; }
+        }
+        
         /* CATEGORIAS VERMELHAS */
         .cat-wrapper { padding: 20px 5%; overflow-x: auto; scrollbar-width: none; }
         .cat-wrapper::-webkit-scrollbar { display: none; }
         .cat-carousel { display: flex; gap: 12px; }
-
         .cat-card { 
             min-width: 100px; padding: 15px; background: var(--primary); 
             color: white; border-radius: 12px; display: flex; 
@@ -100,11 +85,11 @@
         .cat-card i { font-size: 1.4rem; margin-bottom: 5px; }
         .cat-card:hover { background: #cc0000; transform: translateY(-5px); box-shadow: 0 8px 20px rgba(230, 0, 0, 0.4); }
         .cat-card:active { transform: scale(0.95); }
-
+        
         /* SEARCH INFO */
         #search-results-info { display: none; padding: 20px 5% 0; font-weight: 700; color: var(--primary); justify-content: space-between; align-items: center; }
         .btn-back { cursor: pointer; background: var(--secondary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; }
-
+        
         /* SECTIONS & GRID */
         .main-section { padding: 20px 5%; }
         .section-title { font-size: 1rem; font-weight: 800; text-transform: uppercase; border-left: 4px solid var(--primary); padding-left: 10px; margin-bottom: 20px; }
@@ -112,7 +97,7 @@
         
         .products-grid { display: flex; gap: 15px; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; padding: 10px 5px; width: 100%; }
         .products-grid::-webkit-scrollbar { display: none; }
-
+        
         /* CARD VIP */
         .card-vip { 
             position: relative; min-width: 240px; max-width: 240px; 
@@ -126,27 +111,25 @@
         .price-vip { display: block; text-align: center; color: var(--primary); font-weight: 800; font-size: 1.1rem; margin-bottom: 10px; }
         .btn-encomendar { background: var(--secondary); color: white; text-decoration: none; text-align: center; padding: 8px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; transition: 0.3s; }
         .btn-encomendar:hover { background: var(--primary); }
-
         .badge-novo { position: absolute; top: 15px; left: 15px; background: var(--primary); color: white; font-size: 0.6rem; font-weight: 800; padding: 4px 10px; border-radius: 5px; z-index: 5; }
-
         .nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--primary); color: white; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         .prev-btn { left: -10px; }
         .next-btn { right: -10px; }
-
+        
         /* WHATSAPP FAIXA */
         .wa-faixa { background: linear-gradient(90deg, #25d366, #128c7e); margin: 30px 5%; padding: 20px; border-radius: 15px; display: flex; align-items: center; justify-content: space-between; color: white; gap: 20px; box-shadow: 0 10px 20px rgba(18, 140, 126, 0.2); }
         .wa-faixa-info { display: flex; align-items: center; gap: 15px; }
         .wa-faixa-info i { font-size: 2rem; }
         .wa-faixa-info strong { display: block; font-size: 1rem; }
         .wa-faixa-btn { background: white; color: #128c7e; text-decoration: none; padding: 10px 20px; border-radius: 10px; font-weight: 800; font-size: 0.8rem; white-space: nowrap; transition: 0.3s; }
-
+        
         /* FLOATING BTN */
         .btn-flutuante { position: fixed; bottom: 20px; right: 20px; background-color: #25d366; color: white; text-decoration: none; padding: 10px 15px; border-radius: 50px; display: flex; align-items: center; gap: 10px; font-weight: 700; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 2px solid white; }
-
+        
         footer { background: var(--secondary); color: white; padding: 30px 5%; text-align: center; margin-top: 40px; }
         .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
         .social-links a { color: white; font-size: 1.2rem; }
-
+        
         @media (max-width: 600px) {
             .card-vip { min-width: 190px; }
             .wa-faixa { flex-direction: column; text-align: center; }
@@ -156,9 +139,7 @@
     </style>
 </head>
 <body>
-
     <div class="zoom-overlay" id="zoomContainer" onclick="fecharZoom()"></div>
-
     <header>
         <div class="header-top">
             <a href="https://convitedojefferson.github.io/convitedojefferson/" class="logo">Convite do Jefferson</a>
@@ -175,14 +156,14 @@
             <a href="https://convitedojefferson.github.io/convitedojefferson-sobre/">Sobre</a>
         </nav>
     </header>
-
+    
     <div id="collapsible-content">
         <section class="banner">
             <h1>Convites exclusivos para momentos inesquecíveis</h1>
             <p>Artes digitais exclusivas para seus momentos especiais</p>
         </section>
     </div>
-
+    
     <section class="cat-wrapper">
         <div class="cat-carousel">
             <div class="cat-card" onclick="location.href='https://convitedojefferson.github.io/convitedojefferson-todos/'">
@@ -199,12 +180,12 @@
             </div>
         </div>
     </section>
-
+    
     <div id="search-results-info">
         <span>Resultado da pesquisa:</span>
         <div class="btn-back" onclick="clearSearch()">Voltar</div>
     </div>
-
+    
     <section class="main-section">
         <h2 class="section-title">Destaques</h2>
         <div class="carousel-container">
@@ -213,7 +194,7 @@
             <button class="nav-btn next-btn" onclick="scrollCarousel('gridDestaques', 1)"><i class="bi bi-chevron-right"></i></button>
         </div>
     </section>
-
+    
     <section class="main-section" id="section-novidades">
         <h2 class="section-title">Novidades & Lançamentos</h2>
         <div class="carousel-container">
@@ -222,7 +203,7 @@
             <button class="nav-btn next-btn" onclick="scrollCarousel('gridNovidades', 1)"><i class="bi bi-chevron-right"></i></button>
         </div>
     </section>
-
+    
     <section class="wa-faixa">
         <div class="wa-faixa-info">
             <i class="bi bi-whatsapp"></i>
@@ -235,235 +216,131 @@
             SOLICITAR TEMA
         </a>
     </section>
-
+    
     <a href="https://wa.me/5521982576471" class="btn-flutuante" target="_blank">
         <i class="bi bi-whatsapp"></i>
         <span>Atendimento</span>
     </a>
-
+    
     <footer>
         <h2>Convite do Jefferson</h2>
         <div class="social-links">
-            <a href="https://www.instagram.com/convitedojefferson/" target="_blank"><i class="bi bi-instagram"></i></a>                
+            <a href="https://www.instagram.com/artesdojefferson?stkn=dzAzZmp5eG01ZGhk" target="_blank"><i class="bi bi-instagram"></i></a>
             <a href="https://www.pinterest.com/jeffersonsouza2026" target="_blank"><i class="bi bi-pinterest"></i></a>                
-            <a href="https://www.kwai.com/@jeffersonartes" target="_blank"><i class="bi bi-play-btn-fill"></i></a>                
-            <a href="https://convitedojefferson.github.io/bio-convitedojefferson/" target="_blank"><i class="bi-globe"></i></a>     
+            <a href="https://k.kwai.com/u/@jeffersonartes/gGjy4ChO" target="_blank"><i class="bi bi-play-btn-fill"></i></a>                
+            <a href="https://artesdojefferson.github.io/bio-artesdojefferson/" target="_blank"><i class="bi bi-globe"></i></a>     
             <a href="https://wa.me/5521982576471"><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.tiktok.com/@artesdojefferson?_r=1&_t=ZS-99s79wdkPwY" target="_blank"><i class="bi bi-globe"></i></a>
         </div>
         <p style="font-size: 0.6rem; margin-top: 20px; opacity: 0.5;">&copy; 2026 Convite do Jefferson. Todos os direitos reservados.</p>
     </footer>
 
 <script>
-    const estoque = [
-{ nome: "Convite de aniversário digital - Cars 2", cat: "digital", link: "https://i.pinimg.com/736x/35/cf/91/35cf91c68234763c6f4b83f00afc4430.jpg", novo: true },
-{ nome: "Convite de aniversário digital - 3 PALAVRINHAS", cat: "digital", link: "https://i.pinimg.com/736x/b2/a5/a5/b2a5a5370d9c94a15fe9528f640fc50c.jpg", novo: true },
-{ nome: "Convite com Animados – O Rei Leão 2: O Reino de Simba", cat: "animados", link: "https://i.imgur.com/9Pr8nJE.mp4", novo: true },
-
-//digital   
-            { nome: "Convite de aniversário digital - LABUBU", cat: "digital", link: "https://i.pinimg.com/736x/65/39/d7/6539d77c275f4f254b9e47b1b0e35843.jpg", novo: true },
-            { nome: "Convite de aniversário digital - PJMASKS", cat: "digital", link: "https://i.pinimg.com/736x/19/58/f0/1958f083a8b3b2278314922ae20a229a.jpg", novo: true },
-            { nome: "Convite de aniversário digital - MARIA CLARA JP", cat: "digital", link: "https://i.pinimg.com/736x/b0/05/8b/b0058bbba26c93ce65ec1c4acfad1849.jpg", novo: true },
-            { nome: "Convite de aniversário digital - marvel heroes", cat: "digital", link: "https://i.pinimg.com/736x/5c/a7/70/5ca770419851d94341ed57d7b32536d7.jpg", novo: true },
-            { nome: "Convite de aniversário digital - CHÁ REVELAÇÃO", cat: "digital", link: "https://i.pinimg.com/736x/d2/5c/d1/d25cd1fa1918fd12af8fe9cccd10ce8d.jpg", novo: true },
-            { nome: "Convite de aniversário digital - Peppa Pig", cat: "digital", link: "https://i.pinimg.com/736x/01/9d/c9/019dc953a4e89993e8faf4ad94d9b497.jpg", novo: true },
-            { nome: "Convite de aniversário digital - Stranger Things", cat: "digital", link: "https://i.pinimg.com/736x/fc/90/7a/fc907a22ff8414cc31a2ba0713445d65.jpg", novo: true },
-            { nome: "Convite de aniversário digital - Polaroid - stranger things 3", cat: "digital", link: "https://i.pinimg.com/736x/9a/5b/94/9a5b94e11fb01378942014b8a0ff8282.jpg", novo: true },
-            { nome: "Convite de aniversário digital - Stranger Things 2", cat: "digital", link: "https://i.pinimg.com/736x/2f/45/a0/2f45a055621ef0df7aee633c1ac1c825.jpg", novo: true },
-            { nome: "Convite de aniversário digital - Stranger Things", cat: "digital", link: "https://i.pinimg.com/736x/14/e9/20/14e92048721cc0e6b07af0abdac63cf6.jpg", novo: true },
-            { nome: "Convite de aniversário digital - K Pop Demon Hunters", cat: "digital", link: "https://i.pinimg.com/736x/ac/82/9c/ac829c73957b7960e85d6741ab5ec376.jpg", novo: true },
-            { nome: "Convite de aniversário digital - Fazendinha", cat: "digital", link: "https://i.pinimg.com/736x/46/f2/0a/46f20a7c520f8f68bb76eb0f8afd6e65.jpg", novo: true },
-            { nome: "Convite de aniversário digital - Fazendinha dos Sonhos", cat: "digital", link: "https://i.pinimg.com/736x/a9/f0/28/a9f028662e4ffadbd345ba9678cafad4.jpg", novo: true },
-            { nome: "Convite de aniversário digital - Trenzinho Colorido", cat: "digital", link: "https://i.pinimg.com/736x/4a/d9/16/4ad91698ee0e62012438f4b665e47239.jpg", novo: true },
-            { nome: "Convite de aniversário digital – Aniversário Stranger Things", cat: "digital", link: "https://i.pinimg.com/736x/97/c8/57/97c8573c56082ae7460b8c30e07c2ffd.jpg", novo: true },
-            { nome: "Convite de aniversário digital – Aniversário Demogorgon Stranger Things", cat: "digital", link: "https://i.pinimg.com/736x/43/0d/4e/430d4e6d2fc93eaa61110c69be640f0b.jpg", novo: true },
-            { nome: "Convite de aniversário digital – Stitch - Aniversário Infantil Divertido", cat: "digital", link: "https://i.imgur.com/SneJBbp.png", novo: true },
-            { nome: "Convite de aniversário digital – A Lilo e o Stitch", cat: "digital", link: "https://i.imgur.com/WgHIXuf.png", novo: true },
-            { nome: "Convite de aniversário digital – Festa do Stitch Rosa", cat: "digital", link: "https://i.imgur.com/IzZrTeA.png", novo: true },
-            { nome: "Convite de aniversário digital – Aniversário osso cão", cat: "digital", link: "https://i.imgur.com/CxSsPIw.png", novo: true },
-            { nome: "Convite de aniversário digital – Sonico Azul", cat: "digital", link: "https://i.imgur.com/EKrQmXh.png", novo: true },
-            { nome: "Convite de aniversário digital – Aniversário Aventura com Spidey", cat: "digital", link: "https://i.imgur.com/LtLOSDN.png", novo: true },
+const estoque = [
+    // DIGITAIS
+    { nome: "Convite de aniversário digital - LABUBU", cat: "digital", link: "https://i.pinimg.com/736x/65/39/d7/6539d77c275f4f254b9e47b1b0e35843.jpg", novo: true },
+    { nome: "Convite de aniversário digital - PJMASKS", cat: "digital", link: "https://i.pinimg.com/736x/19/58/f0/1958f083a8b3b2278314922ae20a229a.jpg", novo: true },
+    { nome: "Convite de aniversário digital - MARIA CLARA JP", cat: "digital", link: "https://i.pinimg.com/736x/b0/05/8b/b0058bbba26c93ce65ec1c4acfad1849.jpg", novo: true },
+    { nome: "Convite de aniversário digital - marvel heroes", cat: "digital", link: "https://i.pinimg.com/736x/5c/a7/70/5ca770419851d94341ed57d7b32536d7.jpg", novo: true },
+    { nome: "Convite de aniversário digital - CHÁ REVELAÇÃO", cat: "digital", link: "https://i.pinimg.com/736x/d2/5c/d1/d25cd1fa1918fd12af8fe9cccd10ce8d.jpg", novo: true },
+    { nome: "Convite de aniversário digital - Peppa Pig", cat: "digital", link: "https://i.pinimg.com/736x/01/9d/c9/019dc953a4e89993e8faf4ad94d9b497.jpg", novo: true },
+    { nome: "Convite de aniversário digital - Stranger Things", cat: "digital", link: "https://i.pinimg.com/736x/fc/90/7a/fc907a22ff8414cc31a2ba0713445d65.jpg", novo: true },
+    { nome: "Convite de aniversário digital - Polaroid - stranger things 3", cat: "digital", link: "https://i.pinimg.com/736x/9a/5b/94/9a5b94e11fb01378942014b8a0ff8282.jpg", novo: true },
+    { nome: "Convite de aniversário digital - Stranger Things 2", cat: "digital", link: "https://i.pinimg.com/736x/2f/45/a0/2f45a055621ef0df7aee633c1ac1c825.jpg", novo: true },
+    { nome: "Convite de aniversário digital - K Pop Demon Hunters", cat: "digital", link: "https://i.pinimg.com/736x/ac/82/9c/ac829c73957b7960e85d6741ab5ec376.jpg", novo: true },
+    { nome: "Convite de aniversário digital - Fazendinha", cat: "digital", link: "https://i.pinimg.com/736x/46/f2/0a/46f20a7c520f8f68bb76eb0f8afd6e65.jpg", novo: true },
+    { nome: "Convite de aniversário digital - Trenzinho Colorido", cat: "digital", link: "https://i.pinimg.com/736x/4a/d9/16/4ad91698ee0e62012438f4b665e47239.jpg", novo: true },
+    { nome: "Convite digital – Stitch - Aniversário Infantil Divertido", cat: "digital", link: "https://i.imgur.com/SneJBbp.png", novo: true },
+    { nome: "Convite digital – A Lilo e o Stitch", cat: "digital", link: "https://i.imgur.com/WgHIXuf.png", novo: true },
+    { nome: "Convite digital – Festa do Stitch Rosa", cat: "digital", link: "https://i.imgur.com/IzZrTeA.png", novo: true },
     
-    //molduras       
-            { nome: "Convite com Molduras – Como Treinar o Seu Dragão", cat: "molduras", link: "https://dcdn-us.mitiendanube.com/stores/006/803/953/themes/morelia/2-slide-1762868122546-2643841786-992f8d429909618a795b16fd12cbeec11762868123-1024-1024.webp?1549661991", novo: false },
-            { nome: "Convite com Molduras – Bela e a Fera", cat: "molduras", link: "https://i.imgur.com/sG5xlmK.png", novo: false },
-            { nome: "Convite com Molduras – Remo", cat: "molduras", link: "https://i.imgur.com/Ubjt0gi.png", novo: false },
-            { nome: "Convite com Molduras – Festa Junina Quadrilha", cat: "molduras", link: "https://i.imgur.com/MvQkgq7.png", novo: false },
-            { nome: "Convite com Molduras – Preencher de Aniversário Thor", cat: "molduras", link: "https://i.imgur.com/llTg0Os.png", novo: false },
-            { nome: "Convite com Molduras – Alice no País das Maravilhas de Aniversário Infantil", cat: "molduras", link: "https://i.imgur.com/oL8wae4.png", novo: false },
-            { nome: "Convite com Molduras – A Era do Gelo", cat: "molduras", link: "https://i.imgur.com/G77O55N.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Princesa Nella para Menina", cat: "molduras", link: "https://i.imgur.com/CDKrPqd.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Rei Leão", cat: "molduras", link: "https://i.imgur.com/Xm6vkri.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Princesa Bela", cat: "molduras", link: "https://i.imgur.com/Shxd4qW.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Pocahontas", cat: "molduras", link: "https://i.imgur.com/xbVCMaX.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Pipa", cat: "molduras", link: "https://i.imgur.com/iWfdYwf.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Pac Man", cat: "molduras", link: "https://i.imgur.com/9VqSxhv.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário na Pizzaria", cat: "molduras", link: "https://i.imgur.com/ub6Q2pP.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Girafa Safari", cat: "molduras", link: "https://i.imgur.com/roqjd1Q.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Gato de Botas", cat: "molduras", link: "https://i.imgur.com/ZQSIszl.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Fancy Nancy Clancy", cat: "molduras", link: "https://i.imgur.com/JPPlKae.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário EncrenCão", cat: "molduras", link: "https://i.imgur.com/mhYOl7S.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Dora Aventureira", cat: "molduras", link: "https://i.imgur.com/FtHZQnj.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Dinotrux", cat: "molduras", link: "https://i.imgur.com/Vdzt8B6.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário moldura Chapolin Colorado", cat: "molduras", link: "https://i.imgur.com/OqF7m1m.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário de 50 Anos com Foto", cat: "molduras", link: "https://i.imgur.com/QGcAruQ.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário de 40 Anos", cat: "molduras", link: "https://i.imgur.com/x3o8sZ4.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário DC Super Hero Girls", cat: "molduras", link: "https://i.imgur.com/Gj3QcZ0.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Country Meninos", cat: "molduras", link: "https://i.imgur.com/KXAZ4XL.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário BT21", cat: "molduras", link: "https://i.imgur.com/0IPNfGr.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Circo do Mickey", cat: "molduras", link: "https://i.imgur.com/5jcXVK2.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Chuva de Benção", cat: "molduras", link: "https://i.imgur.com/Q8x96Oc.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Chico Bento", cat: "molduras", link: "https://i.imgur.com/NyszpVp.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Casa de Bonecas", cat: "molduras", link: "https://i.imgur.com/nORXteO.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Butterbean’s Café", cat: "molduras", link: "https://i.imgur.com/AoofDUc.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Brinquedos Tema", cat: "molduras", link: "https://i.imgur.com/d0xfD4Z.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Brahma Adulto", cat: "molduras", link: "https://i.imgur.com/sxh1XKA.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Bolofofos", cat: "molduras", link: "https://i.imgur.com/GoEF7eb.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Bob o Trem", cat: "molduras", link: "https://i.imgur.com/Cov1sWy.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Bita no Fundo do Mar", cat: "molduras", link: "https://i.imgur.com/EAG83aT.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Ben e Holly", cat: "molduras", link: "https://i.imgur.com/4DYoopr.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Batman Lego", cat: "molduras", link: "https://i.imgur.com/p9lCcP8.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Baleia Infantil", cat: "molduras", link: "https://i.imgur.com/OtU6W4L.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Bailarina Jolie", cat: "molduras", link: "https://i.imgur.com/OIS0o4d.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Avatar A Lenda de Aang", cat: "molduras", link: "https://i.imgur.com/WkCITGC.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Angry Birds", cat: "molduras", link: "https://i.imgur.com/TAU06Rv.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Arco Íris Animado", cat: "molduras", link: "https://i.imgur.com/wrKRVr0.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Alvin e os Esquilos", cat: "molduras", link: "https://i.imgur.com/eL3uNk7.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Among Us Infantil", cat: "molduras", link: "https://i.imgur.com/BzasB1s.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Adulto Skol", cat: "molduras", link: "https://i.imgur.com/H0bXXfL.png", novo: false },
-            { nome: "Convite com Molduras – Aniversario Adulto Churrasco", cat: "molduras", link: "https://i.imgur.com/JHQpuVP.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Acampamento Tema de Festa", cat: "molduras", link: "https://i.imgur.com/W26Phe0.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário A Ilha das Larvas", cat: "molduras", link: "https://i.imgur.com/OTWNtvz.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário A Fazenda do Zenon", cat: "molduras", link: "https://i.imgur.com/2Zjgy9j.png", novo: false },
-            { nome: "Convite com Molduras – Circo de Aniversário", cat: "molduras", link: "https://i.imgur.com/mL4iAaa.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Chá Bar", cat: "molduras", link: "https://i.imgur.com/50bRql1.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Alice no País das Maravilhas", cat: "molduras", link: "https://i.imgur.com/Qxl8nYK.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Bailarina", cat: "molduras", link: "https://i.imgur.com/YmhHqyH.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário da Ariel", cat: "molduras", link: "https://i.imgur.com/2jWt9ob.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário da Magali", cat: "molduras", link: "https://i.imgur.com/ymqbGni.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário Festa Junina Lembrancinha", cat: "molduras", link: "https://i.imgur.com/SVRD8M4.png", novo: false },
-            { nome: "Convite com Molduras – Aniversário América-MG Futebol Clube", cat: "molduras", link: "https://i.imgur.com/AZxoZVi.png", novo: false },
-            { nome: "Convite com Molduras – Arraiá é Aqui Festa Junina", cat: "molduras", link: "https://i.imgur.com/1KZXOCn.png", novo: false },
-            { nome: "Convite com Molduras – Avaí Futebol Clube", cat: "molduras", link: "https://i.imgur.com/XnOPhtm.png", novo: false },
-            { nome: "Convite com Molduras – Atlético Clube Goianiense", cat: "molduras", link: "https://i.imgur.com/pOAuQlt.png", novo: false },
-            { nome: "Convite com Molduras – AtléRed Bull Bragantino", cat: "molduras", link: "https://i.imgur.com/3jd8azo.png", novo: false },
-            { nome: "Convite com Molduras – Brasil de Pelotas", cat: "molduras", link: "https://i.imgur.com/OSu9w3I.png", novo: false },
-            { nome: "Convite com Molduras – Brusque Futebol Clube", cat: "molduras", link: "https://i.imgur.com/X5JjA5Q.png", novo: false },
-            { nome: "Convite com Molduras – Caipira Tema Infantil", cat: "molduras", link: "https://i.imgur.com/yHddQoN.png", novo: false },
-            { nome: "Convite com Molduras – Confiança", cat: "molduras", link: "https://i.imgur.com/cBoLcDN.png", novo: false },
-            { nome: "Convite com Molduras – CRB Time de Futebol", cat: "molduras", link: "https://i.imgur.com/Wx0RGsA.png", novo: false },
-            { nome: "Convite com Molduras – Cuiabá Esporte Clube", cat: "molduras", link: "https://i.imgur.com/lqC2qbm.png", novo: false },
-            { nome: "Convite com Molduras – Corinthians", cat: "molduras", link: "https://i.imgur.com/y2jsKDk.png", novo: false },
-            { nome: "Convite com Molduras – Festa Junina Girassol", cat: "molduras", link: "https://i.imgur.com/kohdSjJ.png", novo: false },
-            { nome: "Convite com Molduras – Festa Junina Turma da Mônica", cat: "molduras", link: "https://i.imgur.com/rDKOWAo.png", novo: false },
-            { nome: "Convite com Molduras – Festa Junina é só Alegria", cat: "molduras", link: "https://i.imgur.com/g02ggqw.png", novo: false },
-            { nome: "Convite com Molduras – Flamengo", cat: "molduras", link: "https://i.imgur.com/HggHvWe.png", novo: false },
-            { nome: "Convite com Molduras – Fluminense", cat: "molduras", link: "https://i.imgur.com/hml9FHM.png", novo: false },
-            { nome: "Convite com Molduras – Grêmio", cat: "molduras", link: "https://i.imgur.com/8V3T5BL.png", novo: false },
-            { nome: "Convite com Molduras – Luluca", cat: "molduras", link: "https://i.imgur.com/5p55zdd.png", novo: false },
-            { nome: "Convite com Molduras – Maria e JP", cat: "molduras", link: "https://i.imgur.com/syUBsD4.png", novo: false },
-            { nome: "Convite com Molduras – Mengão Flamengo", cat: "molduras", link: "https://i.imgur.com/PFWEWM9.png", novo: false },
-            { nome: "Convite com Molduras – Fluminense", cat: "molduras", link: "https://i.imgur.com/hml9FHM.png", novo: false },
-            { nome: "Convite com Molduras – Grêmio", cat: "molduras", link: "https://i.imgur.com/8V3T5BL.png", novo: false },
-            { nome: "Convite com Molduras – Luluca", cat: "molduras", link: "https://i.imgur.com/5p55zdd.png", novo: false },
-            { nome: "Convite com Molduras – Maria e JP", cat: "molduras", link: "https://i.imgur.com/syUBsD4.png", novo: false },
-            { nome: "Convite com Molduras – Mengão Flamengo", cat: "molduras", link: "https://i.imgur.com/PFWEWM9.png", novo: false },
-            { nome: "Convite com Molduras – Operário Ferroviário", cat: "molduras", link: "https://i.imgur.com/rkck15g.png", novo: false },
-            { nome: "Convite com Molduras – Athletico Paranaense", cat: "molduras", link: "https://i.imgur.com/EA7df3h.png", novo: false },
-            { nome: "Convite com Molduras – Palmeiras", cat: "molduras", link: "https://i.imgur.com/fJF3bF5.png", novo: false },
-            { nome: "Convite com Molduras – Ceará", cat: "molduras", link: "https://i.imgur.com/e148ssf.png", novo: false },
-            { nome: "Convite com Molduras – Bahia", cat: "molduras", link: "https://i.imgur.com/lKJNgyP.png", novo: false },
-            { nome: "Convite com Molduras – Bragantino", cat: "molduras", link: "https://i.imgur.com/uWYuOlj.png", novo: false },
-            { nome: "Convite com Molduras – Botafogo", cat: "molduras", link: "https://i.imgur.com/eEwq3cR.png", novo: false },
-            { nome: "Convite com Molduras – Coritiba", cat: "molduras", link: "https://i.imgur.com/C7opk2M.png", novo: false },
-            { nome: "Convite com Molduras – Criciúma", cat: "molduras", link: "https://i.imgur.com/Npx2fUy.png", novo: false },
-            { nome: "Convite com Molduras – Figueirense", cat: "molduras", link: "https://i.imgur.com/Z35uRDq.png", novo: false },
-            { nome: "Convite com Molduras – Fortaleza", cat: "molduras", link: "https://i.imgur.com/TDJ0SgX.png", novo: false },
-            { nome: "Convite com Molduras – Internacional", cat: "molduras", link: "https://i.imgur.com/oNK9mQl.png", novo: false },
-            { nome: "Convite com Molduras – Goiás", cat: "molduras", link: "https://i.imgur.com/Ilqw4by.png", novo: false },
-            { nome: "Convite com Molduras – Paysandu", cat: "molduras", link: "https://i.imgur.com/WZNlAio.png", novo: false },
-            { nome: "Convite com Molduras – Náutico", cat: "molduras", link: "https://i.imgur.com/5a7J97z.png", novo: false },
-            { nome: "Convite com Molduras – Ponte Preta", cat: "molduras", link: "https://i.imgur.com/uJHbNLf.png", novo: false },
-            { nome: "Convite com Molduras – Portuguesa", cat: "molduras", link: "https://i.imgur.com/Htns5Bs.png", novo: false },
-            { nome: "Convite com Molduras – Santo André", cat: "molduras", link: "https://i.imgur.com/aqpbRJr.png", novo: false },
-            { nome: "Convite com Molduras – Sport Recife", cat: "molduras", link: "https://i.imgur.com/5MZwIkk.png", novo: false },
-            { nome: "Convite com Molduras – Sampaio Corrêa", cat: "molduras", link: "https://i.imgur.com/HsrOynh.png", novo: false },
-            { nome: "Convite com Molduras – Vitória", cat: "molduras", link: "https://i.imgur.com/8pC3Nms.png", novo: false },
-            { nome: "Convite com Molduras – Vila Nova Futebol Clube", cat: "molduras", link: "https://i.imgur.com/uKV53SA.png", novo: false },
-           
-    // animados
-        { nome: "Convite com Animados – Os Vingadores", cat: "animados", link: "https://i.imgur.com/7fWd6aO.mp4", novo: true },
-        { nome: "Convite com Animados – A Bela e a Fera", cat: "animados", link: "https://i.imgur.com/C07TpiI.mp4", novo: true },
-        { nome: "Convite com Animados – My Little Pony", cat: "animados", link: "https://i.imgur.com/F0SQ6zs.mp4", novo: true },
-        
-    ];
+    // MOLDURAS
+    { nome: "Convite com Molduras – Flamengo", cat: "molduras", link: "https://i.imgur.com/HggHvWe.png", novo: false },
+    { nome: "Convite com Molduras – Palmeiras", cat: "molduras", link: "https://i.imgur.com/fJF3bF5.png", novo: false },
+    { nome: "Convite com Molduras – Corinthians", cat: "molduras", link: "https://i.imgur.com/y2jsKDk.png", novo: false },
+    { nome: "Convite com Molduras – Botafogo", cat: "molduras", link: "https://i.imgur.com/eEwq3cR.png", novo: false },
+    { nome: "Convite com Molduras – Bahia", cat: "molduras", link: "https://i.imgur.com/lKJNgyP.png", novo: false },
+    { nome: "Convite com Molduras – Grêmio", cat: "molduras", link: "https://i.imgur.com/8V3T5BL.png", novo: false },
+    { nome: "Convite com Molduras – Internacional", cat: "molduras", link: "https://i.imgur.com/oNK9mQl.png", novo: false },
+    { nome: "Convite com Molduras – Vasco", cat: "molduras", link: "https://i.imgur.com/TDJ0SgX.png", novo: false },
+    
+    // ANIMADOS
+    { nome: "Convite Animado – Os Vingadores", cat: "animados", link: "https://i.imgur.com/7fWd6aO.mp4", novo: true },
+    { nome: "Convite Animado – Tema Infantil", cat: "animados", link: "https://i.imgur.com/Ilqw4by.png", novo: true },
+    { nome: "Convite Animado – Festa Divertida", cat: "animados", link: "https://i.imgur.com/WZNlAio.png", novo: true },
+    { nome: "Convite Animado – Super Heróis", cat: "animados", link: "https://i.imgur.com/oNK9mQl.png", novo: true },
+    { nome: "Convite Animado – Festa de Criança", cat: "animados", link: "https://i.imgur.com/HsrOynh.png", novo: true },
+    { nome: "Convite Animado – Aniversário Colorido", cat: "animados", link: "https://i.imgur.com/5MZwIkk.png", novo: true },
+    { nome: "Convite Animado – Personagens", cat: "animados", link: "https://i.imgur.com/uJHbNLf.png", novo: true },
+    { nome: "Convite Animado – Celebração", cat: "animados", link: "https://i.imgur.com/5a7J97z.png", novo: true },
+];
 
-    function obterPreco(cat) {
-        const precos = { digital: "5,00", molduras: "5,00", animados: "20,00" };
-        return precos[cat] || "5,00";
-    }
+function obterPreco(cat) {
+    const precos = { digital: "5,00", molduras: "5,00", animados: "20,00" };
+    return precos[cat] || "5,00";
+}
 
-    function scrollCarousel(gridId, direction) {
-        const grid = document.getElementById(gridId);
-        const amount = grid.offsetWidth * 0.8;
-        grid.scrollBy({ left: direction * amount, behavior: 'smooth' });
-    }
+function scrollCarousel(gridId, direction) {
+    const grid = document.getElementById(gridId);
+    const amount = grid.offsetWidth * 0.8;
+    grid.scrollBy({ left: direction * amount, behavior: 'smooth' });
+}
 
-    function render(itens, gridId) {
-        const grid = document.getElementById(gridId);
-        if (!grid) return;
-        grid.innerHTML = itens.map(item => {
-            const ehVideo = item.link.toLowerCase().endsWith('.mp4');
-            const mediaTag = ehVideo 
-                ? `<video src="${item.link}" muted loop playsinline preload="none" onmouseover="this.play()" onmouseout="this.pause()" onclick="abrirZoom('video', '${item.link}')"></video>`
-                : `<img src="${item.link}" onclick="abrirZoom('img', '${item.link}')" loading="lazy">`;
+function render(itens, gridId) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    grid.innerHTML = itens.map(item => {
+        const ehVideo = item.link.toLowerCase().endsWith('.mp4');
+        const mediaTag = ehVideo 
+            ? `<video src="${item.link}" muted loop playsinline preload="none" onmouseover="this.play()" onmouseout="this.pause()" onclick="abrirZoom('video', '${item.link}')"></video>`
+            : `<img src="${item.link}" onclick="abrirZoom('img', '${item.link}')" loading="lazy">`;
+        return `
+            <div class="card-vip">
+                ${item.novo ? '<span class="badge-novo">NOVO</span>' : ''}
+                ${mediaTag}
+                <h3>${item.nome}</h3>
+                <span class="price-vip">R$ ${obterPreco(item.cat)}</span>
+                <a href="https://wa.me/5521982576471?text=Quero o ${encodeURIComponent(item.nome)}" class="btn-encomendar" target="_blank">ENCOMENDAR</a>
+            </div>`;
+    }).join('');
+}
 
-            return `
-                <div class="card-vip">
-                    ${item.novo ? '<span class="badge-novo">NOVO</span>' : ''}
-                    ${mediaTag}
-                    <h3>${item.nome}</h3>
-                    <span class="price-vip">R$ ${obterPreco(item.cat)}</span>
-                    <a href="https://wa.me/5521982576471?text=Quero o ${item.nome}" class="btn-encomendar" target="_blank">ENCOMENDAR</a>
-                </div>`;
-        }).join('');
-    }
+function handleSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    if (!query) return;
+    const resultados = estoque.filter(item => item.nome.toLowerCase().includes(query));
+    document.getElementById('collapsible-content').style.display = 'none';
+    document.getElementById('search-results-info').style.display = 'flex';
+    document.getElementById('section-novidades').style.display = 'none';
+    render(resultados, 'gridDestaques');
+}
 
-    function handleSearch() {
-        const query = document.getElementById('searchInput').value.toLowerCase();
-        if(!query) return;
-        const resultados = estoque.filter(item => item.nome.toLowerCase().includes(query));
-        document.getElementById('collapsible-content').style.display = 'none';
-        document.getElementById('search-results-info').style.display = 'flex';
-        document.getElementById('section-novidades').style.display = 'none';
-        render(resultados, 'gridDestaques');
-    }
+function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('collapsible-content').style.display = 'block';
+    document.getElementById('search-results-info').style.display = 'none';
+    document.getElementById('section-novidades').style.display = 'block';
+    render(estoque, 'gridDestaques');
+}
 
-    function clearSearch() {
-        document.getElementById('searchInput').value = '';
-        document.getElementById('collapsible-content').style.display = 'block';
-        document.getElementById('search-results-info').style.display = 'none';
-        document.getElementById('section-novidades').style.display = 'block';
-        render(estoque, 'gridDestaques');
-    }
+function abrirZoom(tipo, src) {
+    const container = document.getElementById('zoomContainer');
+    container.style.display = 'flex';
+    container.innerHTML = tipo === 'img' 
+        ? `<img src="${src}" alt="Ampliado">` 
+        : `<video src="${src}" controls autoplay loop></video>`;
+}
 
-    function abrirZoom(tipo, src) {
-        const container = document.getElementById('zoomContainer');
-        container.style.display = 'flex';
-        container.innerHTML = tipo === 'img' 
-            ? `<img src="${src}">` 
-            : `<video src="${src}" controls autoplay loop></video>`;
-    }
+function fecharZoom() {
+    const container = document.getElementById('zoomContainer');
+    container.style.display = 'none';
+    container.innerHTML = '';
+}
 
-    function fecharZoom() {
-        const container = document.getElementById('zoomContainer');
-        container.style.display = 'none';
-        container.innerHTML = '';
-    }
-
-    window.onload = () => {
-        render(estoque, 'gridDestaques');
-        render(estoque.filter(i => i.novo), 'gridNovidades');
-    };
+window.onload = () => {
+    render(estoque, 'gridDestaques');
+    render(estoque.filter(i => i.novo), 'gridNovidades');
+};
 </script>
 </body>
 </html>
